@@ -24,32 +24,32 @@
                         <div class="col-12">
                             <label class="form-label fw-bold">فئة المنتج</label>
                             <select class="form-select rounded-0 border-secondary" id="category" required>
-                                <option value="0.05" selected>العناية بالسيارات، سوائل المحرك، البواجي (5%)</option>
-                                <option value="0.07">العطور والبخور (7%)</option>
-                                <option value="0.10">حقائب السفر (10%)</option>
-                                <option value="0.13">جميع أنواع الحقائب الأخرى (13%)</option>
-                                <option value="0.14">الملابس والقمصان (14%)</option>
-                                <option value="0.07">إكسسوارات الملابس - كابات، محافظ (7%)</option>
-                                <option value="0.07">ساعات اليد (7%)</option>
-                                <option value="0.05">مجسمات السيارات والألعاب (5%)</option>
-                                <option value="0.03">أنظمة الصوت إلكترونيات السيارات (3%)</option>
-                                <option value="0.07">(7%) اخرى</option>
+                                <option value="0.05" selected>العناية بالسيارات سوائل المحرك البواجي 5%</option>
+                                <option value="0.07">العطور والبخور 7%</option>
+                                <option value="0.10">حقائب السفر 10%</option>
+                                <option value="0.13">جميع أنواع الحقائب الأخرى 13%</option>
+                                <option value="0.14">الملابس والقمصان 14%</option>
+                                <option value="0.07">إكسسوارات الملابس كابات محافظ 7%</option>
+                                <option value="0.07">ساعات اليد 7%</option>
+                                <option value="0.05">مجسمات السيارات والألعاب 5%</option>
+                                <option value="0.03">أنظمة الصوت إلكترونيات السيارات 3%</option>
+                                <option value="0.07">اخرى 7%</option>
                             </select>
                         </div>
 
                         <div class="col-md-6">
-                            <label class="form-label fw-bold">سعر المحل (التكلفة)</label>
+                            <label class="form-label fw-bold">سعر المحل التكلفة</label>
                             <input type="number" class="form-control rounded-0 border-secondary" id="basePrice" value="100" step="0.01">
                         </div>
 
                         <div class="col-md-6">
-                            <label class="form-label fw-bold">الوزن الفعلي (كيلو)</label>
+                            <label class="form-label fw-bold">الوزن الفعلي كيلو</label>
                             <input type="number" class="form-control rounded-0 border-secondary" id="weight" value="0.5" step="0.01">
                         </div>
 
                         <div class="col-12">
                             <hr class="text-secondary my-1">
-                            <label class="form-label fw-bold text-muted d-block mb-2">أبعاد الشحنة (سم) - اختياري</label>
+                            <label class="form-label fw-bold text-muted d-block mb-2">أبعاد الشحنة سم اختياري</label>
                         </div>
 
                         <div class="col-4">
@@ -90,7 +90,7 @@
                             <td class="text-start text-danger" id="outCourier">0.00 ريال</td>
                         </tr>
                         <tr>
-                            <td>ضريبة القيمة المضافة (15% على الرسوم)</td>
+                            <td>ضريبة القيمة المضافة 15% على الرسوم</td>
                             <td class="text-start text-danger" id="outVat">0.00 ريال</td>
                         </tr>
                         <tr>
@@ -98,7 +98,7 @@
                             <td class="text-start fw-bold text-primary fs-4" id="outSellingPrice">0.00 ريال</td>
                         </tr>
                         <tr class="table-success border-top border-dark">
-                            <td class="fw-bold">سعر المحل (الصافي)</td>
+                            <td class="fw-bold">سعر المحل الصافي</td>
                             <td class="text-start fw-bold text-success fs-5" id="outPayout">0.00 ريال</td>
                         </tr>
                     </tbody>
@@ -160,11 +160,11 @@
             if (computedSellingPrice >= 100) {
                 freeShipStatusEl.innerHTML = '<span class="badge bg-success">مؤهل للشحن المجاني</span>';
                 explZone.innerHTML = '<h6 class="fw-bold text-primary">في حال سعر المنتج اكثر من 100 ريال</h6>' +
-                    '<p class="small text-muted mb-0">بما أن سعر البيع الحالي <strong>' + computedSellingPrice.toFixed(2) + ' ريال</strong>           فإن المنتج يصبح مؤهل للشحن المجاني العميل لا يدفع رسوم شحن إضافية ونحن نتحمل رسوم الشحن   وسيكون صافي ربحنا   <strong>' + netPayout.toFixed(2) + ' ريال</strong></p>';
+                    '<p class="small text-muted mb-0">بما أن سعر البيع الحالي <strong>' + computedSellingPrice.toFixed(2) + ' ريال</strong> فإن المنتج يصبح مؤهل للشحن المجاني العميل لا يدفع رسوم شحن إضافية ونحن نتحمل رسوم الشحن وسيكون صافي ربحنا <strong>' + netPayout.toFixed(2) + ' ريال</strong></p>';
             } else {
                 freeShipStatusEl.innerHTML = '<span class="badge bg-warning text-dark">غير مؤهل</span>';
                 explZone.innerHTML = '<h6 class="fw-bold text-primary">في حال سعر المنتج اقل من 100 ريال</h6>' +
-                    '<p class="small text-muted mb-0">بما أن سعر البيع الحالي <strong>' + computedSellingPrice.toFixed(2) + ' ريال</strong>  فإن العميل يدفع رسوم شحن مابين  <strong>  19-30ريال </strong>    لنون <br>  نحن ندفع رسوم الاستلام للمندوب وسيكون صافي ربحنا   <strong>' + netPayout.toFixed(2) + ' ريال</strong></p>';
+                    '<p class="small text-muted mb-0">بما أن سعر البيع الحالي <strong>' + computedSellingPrice.toFixed(2) + ' ريال</strong> فإن العميل يدفع رسوم شحن مابين <strong>19-30 ريال</strong> لنون <br> نحن ندفع رسوم الاستلام للمندوب وسيكون صافي ربحنا <strong>' + netPayout.toFixed(2) + ' ريال</strong></p>';
             }
 
             document.getElementById('outWeight').innerText = chargeableWeight.toFixed(2) + ' كيلو';
