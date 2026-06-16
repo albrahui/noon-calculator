@@ -159,12 +159,12 @@
 
             if (computedSellingPrice >= 100) {
                 freeShipStatusEl.innerHTML = '<span class="badge bg-success">مؤهل للشحن المجاني</span>';
-                explZone.innerHTML = '<h6 class="fw-bold text-primary">تحليل قاعدة الشحن المجاني الحالية</h6>' +
-                    '<p class="small text-muted mb-0">بما أن سعر البيع الحالي <strong>' + computedSellingPrice.toFixed(2) + ' ريال</strong>           فإن المنتج يصبح مؤهل للشحن المجاني العميل لا يدفع رسوم شحن إضافية ونحن نتحمل رسوم الاستلام بالكامل وسيكون صافي ربحنا   <strong>' + netPayout.toFixed(2) + ' ريال</strong></p>';
+                explZone.innerHTML = '<h6 class="fw-bold text-primary">في حال سعر المنتج اكثر من 100 ريال</h6>' +
+                    '<p class="small text-muted mb-0">بما أن سعر البيع الحالي <strong>' + computedSellingPrice.toFixed(2) + ' ريال</strong>           فإن المنتج يصبح مؤهل للشحن المجاني العميل لا يدفع رسوم شحن إضافية ونحن نتحمل رسوم الشحن   وسيكون صافي ربحنا   <strong>' + netPayout.toFixed(2) + ' ريال</strong></p>';
             } else {
                 freeShipStatusEl.innerHTML = '<span class="badge bg-warning text-dark">غير مؤهل</span>';
-                explZone.innerHTML = '<h6 class="fw-bold text-primary">تحليل قاعدة الشحن المجاني الحالية</h6>' +
-                    '<p class="small text-muted mb-0">بما أن سعر البيع الحالي <strong>' + computedSellingPrice.toFixed(2) + ' ريال</strong>           فإن العميل يدفع رسوم شحن مابين  <strong>  19-30ريال </strong>    لنون هذه الرسوم لا تدخل في حسابنا ونحن ندفع رسوم الاستلام للمندوب وسيكون صافي ربحنا   <strong>' + netPayout.toFixed(2) + ' ريال</strong></p>';
+                explZone.innerHTML = '<h6 class="fw-bold text-primary">في حال سعر المنتج اقل من 100 ريال</h6>' +
+                    '<p class="small text-muted mb-0">بما أن سعر البيع الحالي <strong>' + computedSellingPrice.toFixed(2) + ' ريال</strong>  فإن العميل يدفع رسوم شحن مابين  <strong>  19-30ريال </strong>    لنون <br>  نحن ندفع رسوم الاستلام للمندوب وسيكون صافي ربحنا   <strong>' + netPayout.toFixed(2) + ' ريال</strong></p>';
             }
 
             document.getElementById('outWeight').innerText = chargeableWeight.toFixed(2) + ' كيلو';
