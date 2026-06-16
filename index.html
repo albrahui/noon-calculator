@@ -74,9 +74,9 @@
                 <table class="table table-bordered rounded-0 mb-0 align-middle">
                     <tbody>
                         <tr>
-                            <td>حالة الشحن المجاني للعميل</td>
+                            <td>شعار العرض على نون</td>
                             <td class="text-start fw-bold" id="outFreeShipStatus">-</td>
-                        </tr>
+                        </div>
                         <tr>
                             <td>الوزن المحتسب للشحن</td>
                             <td class="text-start" id="outWeight">0.00 كيلو</td>
@@ -157,15 +157,14 @@
             let freeShipStatusEl = document.getElementById('outFreeShipStatus');
             let explZone = document.getElementById('explZone');
 
-            if (computedSellingPrice >= 100) {
-                freeShipStatusEl.innerHTML = '<span class="badge bg-success">مؤهل للشحن المجاني</span>';
-                explZone.innerHTML = '<h6 class="fw-bold text-primary">في حال سعر المنتج اكثر من 100 ريال</h6>' +
-                    '<p class="small text-muted mb-0">بما أن سعر البيع الحالي <strong>' + computedSellingPrice.toFixed(2) + ' ريال</strong> فإن المنتج يصبح مؤهل للشحن المجاني العميل لا يدفع رسوم شحن إضافية ونحن نتحمل رسوم الشحن وسيكون صافي ربحنا <strong>' + netPayout.toFixed(2) + ' ريال</strong></p>';
-            } else {
-                freeShipStatusEl.innerHTML = '<span class="badge bg-warning text-dark">غير مؤهل</span>';
-                explZone.innerHTML = '<h6 class="fw-bold text-primary">في حال سعر المنتج اقل من 100 ريال</h6>' +
-                    '<p class="small text-muted mb-0">بما أن سعر البيع الحالي <strong>' + computedSellingPrice.toFixed(2) + ' ريال</strong> فإن العميل يدفع رسوم شحن مابين <strong>19-30 ريال</strong> لنون <br> نحن ندفع رسوم الاستلام للمندوب وسيكون صافي ربحنا <strong>' + netPayout.toFixed(2) + ' ريال</strong></p>';
-            }
+            freeShipStatusEl.innerHTML = '<span class="badge bg-info text-dark">ديناميكي / حسب العميل</span>';
+            explZone.innerHTML = '<h6 class="fw-bold text-primary">توضيح نظام خدمات نون اللوجستية الإلزامي:</h6>' +
+                '<p class="small text-muted mb-2">تعتمد منصة نون على فصل الخدمات كلياً لتغطية تكاليف التشغيل:</p>' +
+                '<ul class="small text-muted mb-3">' +
+                '<li><strong>العميل يدفع:</strong> مقابل خدمة التوصيل المنزلي (من مستودع نون &larr; إلى باب العميل)، وقد تظهر له مجانية كعرض ترويجي أو بسبب اشتراك Noon One لجذبه للشراء.</li>' +
+                '<li><strong>نحن ندفع كبائعين:</strong> رسوم الاستلام والمعالجة الثابتة <strong>(DirectShip Fee)</strong> وقدرها <strong>' + courierFee.toFixed(2) + ' ريال</strong>. وهي تكلفة حضور مندوب نون، استلام القطعة من موقعنا، وفحصها وإدخالها للنظام (من موقعنا &larr; إلى مستودع نون).</li>' +
+                '</ul>' +
+                '<p class="small text-muted mb-0">لذا، حتى لو ظهر المنتج للعميل بشعار "تشمل الشحن المجاني"، فإن نون خصمها ثابت وإجباري من حساب البائع لتغطية الحركة الأولى للبضاعة. صافي ربح المحل المستلم هو <strong>' + netPayout.toFixed(2) + ' ريال</strong></p>';
 
             document.getElementById('outWeight').innerText = chargeableWeight.toFixed(2) + ' كيلو';
             document.getElementById('outSellingPrice').innerText = computedSellingPrice.toFixed(2) + ' ريال';
