@@ -73,26 +73,37 @@
             <div class="card-body p-4">
                 <table class="table table-bordered rounded-0 mb-0 align-middle">
                     <tbody>
-                        <tr>
-                            <td>شعار العرض على نون</td>
-                            <td class="text-start fw-bold" id="outFreeShipStatus">-</td>
-                        </div>
+
                         <tr>
                             <td>الوزن المحتسب للشحن</td>
                             <td class="text-start" id="outWeight">0.00 كيلو</td>
                         </tr>
+        <tr>
+                            <td>---</td>
+
+                        </tr>
                         <tr>
-                            <td>عمولة المنصة</td>
+                            <td>عمولة المنصة (رسوم)</td>
                             <td class="text-start text-danger" id="outComm">0.00 ريال</td>
                         </tr>
                         <tr>
-                            <td>رسوم الشحن والاستلام</td>
+                            <td>
+                                الشحن والاستلام
+                                ( رسوم )
+
+                            </td>
                             <td class="text-start text-danger" id="outCourier">0.00 ريال</td>
                         </tr>
                         <tr>
                             <td>ضريبة القيمة المضافة 15% على الرسوم</td>
                             <td class="text-start text-danger" id="outVat">0.00 ريال</td>
                         </tr>
+
+                        <tr>
+                            <td>---</td>
+
+                        </tr>
+
                         <tr>
                             <td class="fw-bold bg-light fs-5">سعر البيع المقترح على نون</td>
                             <td class="text-start fw-bold text-primary fs-4" id="outSellingPrice">0.00 ريال</td>
@@ -154,10 +165,9 @@
             let vatOnFees = (commissionFee + courierFee) * 0.15;
             let netPayout = computedSellingPrice - (commissionFee + courierFee + vatOnFees);
 
-            let freeShipStatusEl = document.getElementById('outFreeShipStatus');
-            let explZone = document.getElementById('explZone');
+             let explZone = document.getElementById('explZone');
 
-            freeShipStatusEl.innerHTML = '<span class="badge bg-info text-dark">ديناميكي / حسب العميل</span>';
+
             explZone.innerHTML = '<h6 class="fw-bold text-primary">توضيح نظام خدمات نون اللوجستية الإلزامي:</h6>' +
                 '<p class="small text-muted mb-2">تعتمد منصة نون على فصل الخدمات كلياً لتغطية تكاليف التشغيل:</p>' +
                 '<ul class="small text-muted mb-3">' +
